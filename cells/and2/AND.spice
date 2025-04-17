@@ -1,0 +1,39 @@
+** sch_path: /home/asicfab/a/socet59/Downloads/AND.sch
+**.subckt AND
+M1 net1 B GND GND nmos w=20u l=0.8u m=1
+M2 nand A net1 GND nmos w=20u l=0.8u m=1
+M3 out nand GND GND nmos w=20u l=800n m=1
+M4 nand B VDD VDD pmos w=40u l=0.8u m=1
+M5 nand A VDD VDD pmos w=40u l=0.8u m=1
+M6 out nand VDD VDD pmos w=40u l=800n m=1
+V1 A GND pulse(0 1.8 0 0.1us 0.1us 3us 10us)
+.save i(v1)
+V2 B GND pulse(0 1.8 0 0.1us 0.1us 6us 10us)
+.save i(v2)
+V3 VDD GND 1.8
+.save i(v3)
+R1 out net2 10k m=1
+C1 net2 GND 10f m=1
+C2 nand GND 10f m=1
+**** begin user architecture code
+
+
+
+.model pmos pmos level=49 version=3.3.0
+
+
+.tran 0.1u 30u
+.save all
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.GLOBAL VDD
+**** begin user architecture code
+
+
+.model nmos nmos level=49 version=3.3.0
+
+
+**** end user architecture code
+.end

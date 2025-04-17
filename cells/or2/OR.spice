@@ -1,0 +1,30 @@
+** sch_path: /home/asicfab/a/socet59/Downloads/or-gate.sch
+**.subckt or-gate
+M1 Vout net2 VDD VDD pmos w=20u l=0.8u m=1
+M2 Vout net2 GND GND nmos w=10u l=0.8u m=1
+V1 VDD GND 1.8
+.save i(v1)
+M3 net1 A VDD VDD pmos w=40u l=0.8u m=1
+M4 net2 B net1 net1 pmos w=40u l=0.8u m=1
+M5 net2 A GND GND nmos w=10u l=0.8u m=1
+M6 net2 B GND GND nmos w=10u l=0.8u m=1
+V2 B GND pulse(0 1.8 0 0.05u 0.05u 0.8u 1u)
+.save i(v2)
+V3 A GND pulse(0 1.8 0 0.05u 0.05u 0.5u 1u)
+.save i(v3)
+C1 Vout GND 1f m=1
+**** begin user architecture code
+
+.tran 1n 5u
+.save all .print A B Vout
+
+
+
+.model nmos nmos level=49 version=3.3.0
+.model pmos pmos level=49 version=3.3.0
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.GLOBAL VDD
+.end

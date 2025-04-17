@@ -1,0 +1,35 @@
+** sch_path: /home/asicfab/a/socet59/Downloads/DFlip-flop3.sch
+**.subckt DFlip-flop3
+M1 D CLKb net1 Vdd p1 w=10u l=0.8u m=1
+M2 net1 CLK D gnd n1 w=10u l=0.8u m=1
+M3 Qb21 net1 gnd gnd n1 w=50u l=0.8u m=1
+M4 Q Qb21 gnd gnd n1 w=50u l=0.8u m=1
+M5 Qb21 net1 Vdd Vdd p1 w=50u l=0.8u m=1
+M6 Q Qb21 Vdd Vdd p1 w=50u l=0.8u m=1
+M7 net1 CLK Q Vdd p1 w=10u l=0.8u m=1
+M8 Q CLKb net1 gnd n1 w=10u l=0.8u m=1
+M9 CLKb CLK Vdd Vdd p1 w=20u l=0.8u m=1
+M10 CLKb CLK gnd gnd n1 w=10u l=0.8u m=1
+V1 Vdd GND 1.8
+.save i(v1)
+V2 D GND pulse(0 1.8 0 1us 1us 15us 30us)
+.save i(v2)
+V3 CLK GND pulse(0 1.8 -1us 1us 1us 4us 10us)
+.save i(v3)
+C1 Q GND 100f m=1
+**** begin user architecture code
+
+
+.model n1 nmos level=49 version=3.3.0
+.model p1 pmos level=49 version=3.3.0
+.model n2 nmos level=2 version=3.3.0
+.model p2 pmos level=2 version=3.3.0
+
+
+.tran 0.5us 100us
+.save all
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

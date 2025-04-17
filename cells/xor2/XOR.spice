@@ -1,0 +1,37 @@
+** sch_path: /home/asicfab/a/socet59/Downloads/xor-gate.sch
+**.subckt xor-gate
+V1 VDD GND 1.8
+.save i(v1)
+M3 net1 -A VDD VDD p1 w=80u l=0.8u m=1
+M4 Vout B net1 net1 p1 w=80u l=0.8u m=1
+V2 B GND pulse(0 1.8 6u 0.1u 0.1u 3u 10u)
+.save i(v2)
+V3 A GND pulse(0 1.8 0 0.1u 0.1u 3u 10u)
+.save i(v3)
+C1 Vout GND 10f m=1
+M1 net2 A VDD VDD p1 w=80u l=0.8u m=1
+M2 Vout -B net2 net2 p1 w=80u l=0.8u m=1
+M5 Vout A net3 net3 n1 w=40u l=0.8u m=1
+M6 net3 B GND GND n1 w=40u l=0.8u m=1
+M7 Vout -A net4 net4 n1 w=40u l=0.8u m=1
+M8 net4 -B GND GND n1 w=40u l=0.8u m=1
+V4 -B GND pulse(1.8 0 6u 0.1u 0.1u 3u 10u)
+.save i(v4)
+V5 -A GND pulse(1.8 0 0 0.1u 0.1u 3u 10u)
+.save i(v5)
+*  x1 -       IS MISSING !!!!
+**** begin user architecture code
+
+.tran 0.1u 30u
+.save all .print A B -A -B Vout
+
+
+
+.model n1 nmos level=49 version=3.3.0
+.model p1 pmos level=49 version=3.3.0
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.GLOBAL VDD
+.end

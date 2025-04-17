@@ -1,0 +1,119 @@
+.MODEL MODN NMOS LEVEL=7
+*	-
+************************* SIMULATION PARAMETERS *******************
+*	-
+*	format	: PSPICE
+*	model	: MOS BSIM3v3
+*	process	: CY[EB]
+*	revision : B;
+* extracted : CYE I310SE00; 1999-03; ese(487)
+* doc#	: 9933006 REV_B
+*	-
+*	TYPICAL MEAN CONDITION
+*	-
+*
+**** Flags ***
++MOBMOD =1.000e+00 CAPMOD =2.000e+00
++NLEV	=0
+**** Threshold voltage related model parameters ***
++K1	=1.183e+00	
++K2	=-1.59e-01	K3	=1.404e-01	K3B	=-3.19e-01
++NCH	=6.937e+16	VTH0	=8.357e-01		
++VOFF	=-9.95e-02	DVT0	=3.368e+00	DVT1	=7.995e-01
++DVT2	=-1.72e-01	KETA	=-2.55e-02		
++PSCBE1	=4.194e+08	PSCBE2	=1.000e-04		
++DVT0W	=-3.78e-01	DVT1W	=2.061e+05	DVT2W	=-1.36e-01
+**** Mobility related model parameters ***
++UA	=1.000e-12 UB	=2.199e-18	UC	=5.554e-11
++U0	=4.872e+02			
+**** Subthreshold related parameters ***
++DSUB	=5.000e-01 ETA0	=6.982e-03 ETAB	=-2.63e-02
++NFACTOR=6.710e-01
+**** Saturation related parameters ***
++EM	=4.100e+07 PCLM	=1.101e+00
++PDIBLC1=4.797e-02 PDIBLC2=9.152e-04 DROUT =5.000e-01
++A0	=8.383e-01 A1	=0.000e+00 A2	=1.000e+00
++PVAG	=0.000e+00 VSAT	=9.079e+04 AGS	=1.583e-01
++B0	=2.356e-07 B1	=0.000e+00 DELTA =1.000e-02
++PDIBLCB=3.040e-01
+****
++W0
++DWC
++LL
++LLN
++WW
++WWN
+****
++AT
++KT1
++UA1
++PRT
+****	Geometry modulation
+=1.633e-06 DLC
+=3.853e-07 DWB
+=0.000e+00 LW
+=1.000e+00 LWN
+=0.000e+00 WWL
+=1.000e+00
+Temperature effect
+=3.300e+04 UTE
+=-4.11e-01 KT2
+=0.000e+00 UB1
+=0.000e+00
+Overlap capacitance	related parameters ***
+=2.090e-07
+=0.000e+00 DWG	=0.000e+00
+=0.000e+00 LWL	=0.000e+00
+=1.000e+00 WL	=0.000e+00
+=0.000e+00 WLN	=1.000e+00
+
+parameters ***
+=-1.80e+00
+=2.200e-02 KT1L	=0.000e+00
+=0.000e+00 UC1	=0.000e+00
+
+related and dynamic model parameters	
+
+
+
+
+
+
+
+
+
+
+***
++CGDO	=3.500e-10 CGSO	=3.500e-10	CGBO	=1.500e-10
++CGDL	=0.000e+00 CGSL
++CF	=0.000e+00 ELM
++XPART =1.000e+00 CLC	=0.000e+00
+=5.000e+00
+=1.000e-15	CKAPPA
+
+CLE	=6.000e-01
+
+=6.000e-01
+ 
+
+**** Parasitic resistance and capacitance related model parameters
++RDSW	=1.776e+03
++CDSC	=1.269e-03 CDSCB =3.987e-04 CDSCD =9.439e-05
++PRWB	=0.000e+00 PRWG	=0.000e+00 CIT	=2.566e-05
+**** Process and parameters extraction related model parameters *
++TOX	=1.585e-08 NGATE =0.000e+00
++NLX	=1.000e-10
+**** Substrate current related model parameters ***
++ALPHA0 =0.000e+00 BETA0 =3.000e+01
+**** Noise effect related model parameters ***
++AF	=1.451e+00 KF	=2.330e-26 EF	=1.000e+00
++NOIA	=1.000e+20 NOIB	=5.000e+04 NOIC	=-1.40e-12
+**** Common extrinsic model parameters ***
++LINT	=2.090e-07 WINT	=3.853e-07 XJ	=3.000e-07
++RSH	=2.500e+01 JS	=1.000e-05
++CJ	=2.900e-04 CJSW	=2.300e-10
++MJ	=4.600e-01 MJSW	=3.300e-01
++PB	=8.600e-01 TT	=0.000e+00
++PBSW =8.600e-01 Modelo pmos
+*
+
