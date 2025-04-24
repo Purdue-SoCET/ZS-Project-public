@@ -40,7 +40,7 @@ This project demonstrates a complete digital flow from schematic to layout to sy
 
 ## 📘 Documentation
 
-All tools, design steps, and flow guidelines will be fully documented in this repository. A comprehensive **Wiki** is also planned to include:
+All tools, design steps, and flow guidelines will be fully documented in each repository:
 
 - Step-by-step tutorials for each design stage
 - Best practices for using open-source EDA tools
