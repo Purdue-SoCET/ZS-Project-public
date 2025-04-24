@@ -13,5 +13,5 @@ In most cell's folder, the spice model, schematic, and layout files can be found
 - .sp: Netlists for each standard cell, required for CharLib. Buffer only exists to fulfill requirement for Yosys so only netlist exists.
 
 ## Resources
-Xschem Manual: https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.html
-Ngspice Manual: https://ngspice.sourceforge.io/docs/ngspice-manual.pdf
+- Xschem Manual: https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.html
+- Ngspice Manual: https://ngspice.sourceforge.io/docs/ngspice-manual.pdf
