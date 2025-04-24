@@ -60,6 +60,6 @@ The developed **open-source PDK and standard cell library** will be shared publi
 - [OpenROAD GitHub](https://github.com/The-OpenROAD-Project/OpenROAD)
 - [AcuSemi AS800 Process Node](https://acusemi.com/)
 - [CharLib Standard Cell Characterizer](https://github.com/efabless/charLib)
-- [XSCHEM](https://github.com/StefanSchippers/xschem)
-- [KLayout](https://www.klayout.de/)
+- [XSCHEM](https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.html)
+- [KLayout](https://www.klayout.de/doc/manual/index.html)
 
