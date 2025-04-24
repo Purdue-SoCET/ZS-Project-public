@@ -39,13 +39,15 @@ This project demonstrates a complete digital flow from schematic to layout to sy
 ---
 
 ## 📂 Repository Structure
-schematics         # XSCHEM project files and SPICE netlists
-layouts            # GDS layouts and KLayout projects
-pcell_scripts      # Python-based parameterized layout generators
-charlib_output     # Liberty timing libraries generated from CharLib
-openlane_configs   # Configs for running OpenLane with AS800
-test_designs       # Combinational logic examples for validation
-README.md           # This file
+
+```text
+├── /schematics         # XSCHEM project files and SPICE netlists
+├── /layouts            # GDS layouts and KLayout projects
+├── /pcell_scripts      # Python-based parameterized layout generators
+├── /charlib_output     # Liberty timing libraries generated from CharLib
+├── /openlane_configs   # Configs for running OpenLane with AS800
+├── /test_designs       # Combinational logic examples for validation
+├── README.md           # This file
 
 
 ---
