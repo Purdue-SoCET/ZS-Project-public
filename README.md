@@ -48,14 +48,6 @@ All tools, design steps, and flow guidelines will be fully documented in this re
 
 ---
 
-## 📢 Contribution & License
-
-We welcome contributions! If you'd like to extend this library or adapt it to another process node, feel free to fork the repo and submit pull requests.
-
-This repository is licensed under the **MIT License**.
-
----
-
 ## 🌐 Project Impact
 
 The developed **open-source PDK and standard cell library** will be shared publicly to lower the barrier of entry into chip design and manufacturing. By making these assets available, we aim to foster open innovation in semiconductor education and development.
