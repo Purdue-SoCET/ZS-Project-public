@@ -6,7 +6,7 @@ Standard cells, such as logic gates, flip flops, and IO pads, have been created 
 
 In most cell's folder, the spice model, schematic, and layout files can be found. Ngspice, Xschem, and KLayout can be used in order to make changes to these files.
 
-* Please note that post-layout simulations have not yet been performed. Keep this in mind and run them if necessary, or make appropriate modifications based on the results.
+Please note that post-layout simulations have not yet been performed. Keep this in mind and run them if necessary, or make appropriate modifications based on the results.
 
 ## File Types:
 - .gds: Layout files, can be opened/modified using KLayout.
