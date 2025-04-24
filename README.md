@@ -56,7 +56,7 @@ The developed **open-source PDK and standard cell library** will be shared publi
 
 ## 🔗 Links
 
-- [OpenLane Documentation](https://github.com/The-OpenROAD-Project/OpenLane)
+- [OpenLane GitHub](https://github.com/The-OpenROAD-Project/OpenLane)
 - [OpenROAD GitHub](https://github.com/The-OpenROAD-Project/OpenROAD)
 - [CharLib Standard Cell Characterizer](https://github.com/stineje/CharLib/tree/main)
 - [XSCHEM](https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.html)
