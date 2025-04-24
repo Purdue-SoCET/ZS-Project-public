@@ -1,0 +1,70 @@
+				CHARACTERIZATION SOFTWARE SETUP
+----------------------------------------------------------------------------------------------
+Setup Windows Linux environment with Ubuntu
+----------------------------------------------------------------------------------------------
+Source: https://learn.microsoft.com/en-us/windows/wsl/install
+1. Open up PowerShell or Command Prompt
+2. Enter: "wsl --install" to install Windows Subsystem for Linux (WSL)
+3. Enter: "wsl --install Ubuntu" to install the Ubuntu distro
+4. Set a username and password for the Ubuntu environment
+Note: 	You may have to restart the Linux environment throughout this process.
+	This can be done by entering "exit" to exit WSL, then enter "wsl" to re-enter Ubuntu.
+
+----------------------------------------------------------------------------------------------
+NGSpice Installation
+----------------------------------------------------------------------------------------------
+Note: 	You may need to run "sudo apt-get update" before you can run the rest of these
+1. 	sudo apt install bison flex libx11-dev libxaw7-dev libxmu-dev libxext-dev libxft-dev 
+	libfontconfig1-dev libxrender-dev libfreetype6-dev
+2. 	sudo apt install libreadline-dev
+3. 	sudo apt install automake
+4. 	sudo apt install libtool
+5. 	sudo apt install g++
+6. 	sudo apt install make
+7. 	Clone ngspice with "clone ngspice: git clone git://git.code.sf.net/p/ngspice/ngspice"
+8. 	cd into ngspice with "cd ngspice" or whatever name your ngspice directory is
+9. 	run "./autogen.sh"
+10. 	run "./configure --with-ngshared --enable-cider"
+11.	make clean
+12.	make
+13.	sudo make install
+14.	Check that NGSpice install with "find /usr/lib /usr/local/lib -name "libngspice.so"". 
+	The file path should appear.
+15.	Open the .bashrc file and add "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib" 
+	at the bottom.
+16.	Run sudo "ldconfig"
+
+----------------------------------------------------------------------------------------------
+PySpice & CharLib Installation
+----------------------------------------------------------------------------------------------
+1.	Run "sudo add-get-repository ppa:deadsnakes/ppa"
+2.	Run "sudo apt-get update"
+3.	Install either Python3.10 or Python3.11 with "sudo apt-get install python3.x" where x 
+	is 10 or 11
+4.	Run "sudo apt install python-is-python3"
+5.	Check the python version with "python3 -V"
+6.	If the python version is anything other than 3.10 or 3.11, use the following steps:
+	a.	"sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.x y" 
+		where x is the python version (10 or 11) and y is the priority, can just use y=1 
+		if you have not previously set python3 alternatives.
+	b.	"sudo update-alternatives --config python3", then you can select which python3 
+		alternative you'd like to use
+7.	Run "sudo apt install python3-pip"
+8.	Run "pip install -U setuptools"
+9.	Run "pip install git+https://github.com/infinitymdm/PySpice"
+10.	Run "pip install git+https://github.com/stineje/CharLib.git"
+11.	Clone the repo with "git clone https://github.com/stineje/CharLib.git"
+12.	cd into the CharLib repo with "cd CharLib" and you should be able to run CharLib with 
+	"charlib run path/to/test.yml" or "make" to run both example PDKs.
+
+----------------------------------------------------------------------------------------------
+Installing Yosys (if not using with OpenLane)
+----------------------------------------------------------------------------------------------
+1.	Run "git clone --recurse-submodules https://github.com/YosysHQ/yosys.git" in wsl
+2.	Run "sudo apt-get install build-essential clang lld bison flex libreadline-dev gawk 
+	tcl-dev libffi-dev git graphviz xdot pkg-config python3 libboost-system-dev 
+	libboost-python-dev libboost-filesystem-dev zlib1g-dev"
+3.	cd into yosys directory: cd yosys
+4.	Run "make", should start building yosys
+5.	Run "sudo make install" to install yosys
+6.	Run "make test" to ensure that yosys starts running tests, may result in errors but ok

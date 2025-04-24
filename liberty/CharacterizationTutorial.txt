@@ -1,0 +1,41 @@
+			CHARACTERIZATION & SYNTHESIS TUTORIAL
+----------------------------------------------------------------------------------------------
+Characterizing a Cell
+----------------------------------------------------------------------------------------------
+1.	Create a YAML file according to spec on the CharLib GitHub: 
+	https://github.com/stineje/CharLib/blob/main/docs/yaml.md
+2.	Use cells in the form of netlists as *.sp files, make sure all paths to netlist cells 
+	are correct in the YAML file
+3.	Use transistor models as a single model.sp file, make sure path to models are correct 
+	in YAML file
+*** May want to put sequential cells as a separate YAML file due to timescale difference in ***
+*** delays between combinational and sequential, AS800Lib YAML files are split 		    ***
+4.	Run "charlib run <path/to/yaml>" where <path/to/yaml> is the path to the YAML file that 
+	you want to run, results will be stored in results folder in CharLib directory
+5.	Yosys will not be able to read the "capacitive_load_unit : "1pf";" line in the .lib file 
+	so must be changed to "capacitive_load_unit (1.0,pf);"
+		- Can replace the line with whatever capacitive load unit used but keep format
+6.	If using a sequential cell, the line "ff(<function>) { clocked_on: _; next_state: _; etc. } 
+	must be added. 
+		- Each command should ending in ";" should be on its own line and additional lines 
+		  for set and reset must be added if used. 
+		- <function> should be the function implemented, normally just the next_state 
+		  variable (D for DFF).
+
+----------------------------------------------------------------------------------------------
+Synthesizing a design using the liberty file from CharLib
+----------------------------------------------------------------------------------------------
+1.	Make sure all designs and liberty files are located somewhere in the Yosys directory
+2.	Run "read design.v" to load the design to be synthesized into Yosys
+		- design.v is substituted to whatever your design file is named
+		- If it's an SV file, make sure to use "-sv" before the design file name
+3. 	Run "hierarchy -check -top module_name" to set the top-level module of the design
+4.	Run optimizations: "proc; opt", "memory; opt", "fsm; opt", "techmap; opt"
+		- If design is purely combinational, can just use "techmap; opt"
+5.	If sequential logic used, run "dfflibmap -liberty cells.lib" where cells.lib is the 
+	liberty file containing the sequential cells
+6.	Run "abc -liberty cells.lib" is the liberty file containing combinational cells
+7.	Run "clean" to get rid of unused cells, wires
+8.	Run "write_verilog synth.v" where synth.v is the desired synthesized design file name
+9.	The synthesized file should have the design in the form of individual logic gates and 
+	wires
