@@ -17,3 +17,4 @@ Please note that post-layout simulations have not yet been performed. Keep this 
 ## Resources
 - Xschem Manual: https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.html
 - Ngspice Manual: https://ngspice.sourceforge.io/docs/ngspice-manual.pdf
+- KLayout Manual: https://www.klayout.de/doc/manual/index.html
