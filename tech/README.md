@@ -6,8 +6,8 @@ Link to the OpenROAD: https://openroad-flow-scripts.readthedocs.io/en/latest/ind
 Our goal is to validate and incorporate AS800 as a new custom PDK into the OpenROAD through the platform bring-up process. 
 
 # File description
-For GDS files, see the https://github.com/Purdue-SoCET/ZS-Project-public/tree/main/cells
-AS800.tech.lef: The tech LEF for AS800 containing the physical rules for laying out the different layers of AS800 PDK. 
-NAND.macro.lef: The macro/cell LEF for the NAND cell 
-AS800.lyt: 
-AS800layers.lyp:
+For GDS files, see the https://github.com/Purdue-SoCET/ZS-Project-public/tree/main/cells\n
+AS800.tech.lef: The tech LEF for AS800 containing the physical rules for laying out the different layers of AS800 PDK. \n
+NAND.macro.lef: The macro/cell LEF for the NAND cell \n
+AS800.lyt: Layout view file for AS800, used to store layer and window display properties in KLayout. \n
+AS800layers.lyp: Layer property file for AS800, for use in KLayout for formatting how different layers should look and displayed. \n
