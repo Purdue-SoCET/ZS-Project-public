@@ -28,3 +28,4 @@ cells:
         inputs:     [D]
         outputs:    [Q]
         flops:      [P0002,P0003]
+        functions:  [Q<=D]
